@@ -818,14 +818,21 @@
             .games-grid {
                 height: 250px;
                 gap: 8px;
+                overflow-x: auto;
+                overflow-y: hidden;
+                scroll-behavior: smooth;
+                -webkit-overflow-scrolling: touch;
             }
 
             .game-card {
-                min-width: 50px;
+                min-width: calc(75% - 16px);
+                flex: 0 0 calc(75% - 16px);
+                flex-shrink: 0;
             }
 
             .game-card.expanded {
-                flex: 2;
+                min-width: calc(90% - 16px);
+                flex: 0 0 calc(90% - 16px);
             }
 
             .game-image {
@@ -1109,7 +1116,7 @@
             }
         }
         .strategy-section {
-            min-height: 100vh;
+            /* min-height: 100vh; */
             background: linear-gradient(180deg, #000000 0%, #1a0000 50%, #000000 100%);
             padding: 40px 60px;
             position: relative;
@@ -1492,7 +1499,7 @@
 
             .hero {
                 flex-direction: column;
-                padding: 0 40px;
+                padding: 100px 40px;
             }
 
             .strategy-section {
@@ -1528,23 +1535,28 @@
         @media (max-width: 768px) {
             .carousel-container {
                 padding: 0 15px;
-            }
-
-            .games-grid {
-                overflow-x: auto;
-                overflow-y: hidden;
-                scroll-behavior: smooth;
+                max-height: 700px;
+                overflow-y: auto;
+                overflow-x: hidden;
                 -webkit-overflow-scrolling: touch;
             }
 
+            .games-grid {
+                height: auto;
+                gap: 12px;
+                flex-direction: column;
+            }
+
             .game-card {
-                min-width: calc(60% - 16px);
-                flex: 0 0 calc(60% - 16px);
+                min-width: 100%;
+                flex: 0 0 220px;
+                height: 220px;
+                width: 100%;
             }
 
             .game-card.expanded {
-                min-width: calc(85% - 16px);
-                flex: 0 0 calc(85% - 16px);
+                flex: 0 0 320px;
+                height: 320px;
             }
 
             .hero h1 {
@@ -1600,25 +1612,35 @@
         }
 
         @media (max-width: 480px) {
-            .carousel-container {
-                padding: 0 10px;
+            .hero {
+                padding: 100px 20px;
+                margin-top: 50px;
             }
 
-            .games-grid {
-                overflow-x: auto;
-                overflow-y: hidden;
-                scroll-behavior: smooth;
+            .carousel-container {
+                padding: 0 10px;
+                max-height: 600px;
+                overflow-y: auto;
+                overflow-x: hidden;
                 -webkit-overflow-scrolling: touch;
             }
 
+            .games-grid {
+                height: auto;
+                gap: 12px;
+                flex-direction: column;
+            }
+
             .game-card {
-                min-width: calc(75% - 16px);
-                flex: 0 0 calc(75% - 16px);
+                min-width: 100%;
+                flex: 0 0 200px;
+                height: 200px;
+                width: 100%;
             }
 
             .game-card.expanded {
-                min-width: calc(90% - 16px);
-                flex: 0 0 calc(90% - 16px);
+                flex: 0 0 300px;
+                height: 300px;
             }
 
             section {
@@ -1651,7 +1673,7 @@
             }
 
             .hero {
-                padding: 0 20px;
+                padding: 100px 20px;
             }
 
             .games-section {
@@ -1794,12 +1816,12 @@
                 <div class="social-icon">▶</div>
             </div>
         </div>
-        <div class="contact-image">
+        <!-- <div class="contact-image">
             <div style="position: relative; z-index: 2; text-align: center;">
                 <div style="font-size: 64px; margin-bottom: 20px;">💌</div>
                 <div style="color: rgba(255,255,255,0.8); font-size: 18px;">Get In Touch</div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <script>
@@ -1890,6 +1912,13 @@
         // ===== ENHANCED PARALLAX WITH SECTION AWARENESS =====
         let scrollProgress = 0;
         let visibilityPercent = 0;
+        let isMobile = window.innerWidth <= 768;
+
+        // Update isMobile on resize
+        window.addEventListener('resize', () => {
+            isMobile = window.innerWidth <= 768;
+        });
+
         window.addEventListener('scroll', () => {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
