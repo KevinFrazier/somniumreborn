@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Somnium Reborn - Gaming Retail</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+
     <style>
         * {
             margin: 0;
@@ -557,7 +560,6 @@
 
         /* Section 2: Our Games */
         .games-section {
-            min-height: 100vh;
             background: linear-gradient(180deg, #000000 0%, #0d0d0d 50%, #000000 100%);
             padding: 80px 40px;
             position: relative;
@@ -1245,6 +1247,9 @@
             z-index: 1;
             box-shadow: 0 0 20px rgba(255, 46, 46, 0.3);
         }
+        .profile-pic {
+            width: 100%;
+        }
 
         .team-name {
             font-size: 22px;
@@ -1785,16 +1790,20 @@
         <h2 class="section-title">Our Team</h2>
         <div class="team-grid">
             <div class="team-card">
-                <div class="team-image">👤</div>
+                <div class="team-image"> 
+                    <img class='profile-pic' src="./assets/allen-profile.png">
+                </div>
                 <h3 class="team-name">Allen Asher</h3>
                 <p class="team-role">Co-Founder & Creative Director</p>
-                <p class="team-bio">Leading the creative vision of Somnium Reborn with innovative game design and storytelling.</p>
+                <p class="team-bio">I have a huge passion for videogames and had a dream to create a company that was for gamers and for developers. My imagination is my favorite part to be sent to unique and vast worlds that open adventure and challenges players. My goal is to create the greatest videogame publishing and developing company the world has ever seen. To be different that these corporate money focused companies out there. God is at the center of my vision and with his help I know we will succeed.</p>
             </div>
             <div class="team-card">
-                <div class="team-image">👤</div>
+                <div class="team-image">
+                    <img class='profile-pic' src="./assets/kevin-profile.png">
+                </div>
                 <h3 class="team-name">Kevin Frazier</h3>
                 <p class="team-role">Co-Founder & Technical Director</p>
-                <p class="team-bio">Spearheading the technical excellence and architecture that powers our gaming experiences.</p>
+                <p class="team-bio">I've been a software engineer lead for years and have always been passionate about game development. I've self-taught myself the skills needed to build the games that help bring the vision that both Allen and I want to contribute to - make games that changes lives. </p>
             </div>
         </div>
     </section>
@@ -1803,17 +1812,17 @@
     <section class="contact-section" id="contact">
         <div class="contact-content">
             <h2>Send us a message</h2>
-            <div class="contact-info">
+            <!-- <div class="contact-info">
                 <p>123 Anywhere St., Any City</p>
                 <p>Any State, Country</p>
                 <p>123-456-789</p>
-            </div>
-            <p class="contact-email">hello@reallygreatsite.com</p>
+            </div> -->
+            <!-- <p class="contact-email">hello@reallygreatsite.com</p> -->
             <div class="social-icons">
-                <div class="social-icon">𝕏</div>
-                <div class="social-icon">f</div>
-                <div class="social-icon">📷</div>
-                <div class="social-icon">▶</div>
+                <i class="fa-brands fa-x-twitter social-icon"></i>
+                <i class="fa-brands fa-instagram social-icon"></i>
+                <!-- <div class="social-icon">📷</div>
+                <div class="social-icon">▶</div> -->
             </div>
         </div>
         <!-- <div class="contact-image">
